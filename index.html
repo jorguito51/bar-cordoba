@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Córdoba - La Granjuela</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; color: #333; }
+    header { background: #800000; color: white; padding: 1em; text-align: center; }
+    nav { background: #eee; padding: 1em; text-align: center; }
+    section { padding: 2em; }
+    .menu-section { background: #fff; margin-bottom: 1em; padding: 1em; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .dish { margin-bottom: 1em; }
+    button { background: #800000; color: white; border: none; padding: 0.5em 1em; border-radius: 4px; cursor: pointer; }
+    .dropdown { margin-top: 1em; }
+    .dropdown-content { display: none; background: #f1f1f1; padding: 1em; border-radius: 6px; }
+    .recommendations { background: #ffe8e8; padding: 1em; border-radius: 8px; margin-top: 2em; }
+  </style>
+  <script>
+    function toggleDropdown(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+    function showImage(imageUrl) {
+      window.open(imageUrl, '_blank');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Bar Córdoba</h1>
+    <p>La Granjuela, Córdoba</p>
+  </header>
+  <section>
+    <h2>Menú</h2>
+    <div class="menu-section">
+      <h3>Entradas</h3>
+      <div class="dish">
+        <p><strong>Croquetas de boletus</strong></p>
+        <button onclick="showImage('croquetas.jpg')">Ver Foto</button>
+      </div>
+      <div class="dish">
+        <p><strong>Ensaladilla de pulpo y gambas</strong></p>
+        <button onclick="showImage('ensaladilla.jpg')">Ver Foto</button>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <h3>Platos Principales</h3>
+      <div class="dish">
+        <p><strong>Pulpo a la gallega</strong></p>
+        <button onclick="showImage('pulpo.jpg')">Ver Foto</button>
+      </div>
+      <div class="dish">
+        <p><strong>Carne de vaca gallega</strong></p>
+        <button onclick="showImage('vaca.jpg')">Ver Foto</button>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <h3>Postres</h3>
+      <div class="dish">
+        <p><strong>Tarta de queso</strong></p>
+        <button onclick="showImage('tarta.jpg')">Ver Foto</button>
+      </div>
+    </div>
+
+    <div class="menu-section dropdown">
+      <button onclick="toggleDropdown('wines')">Vinos</button>
+      <div id="wines" class="dropdown-content">
+        <ul>
+          <li>Ribera del Duero</li>
+          <li>Rioja Crianza</li>
+          <li>Albariño</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="menu-section dropdown">
+      <button onclick="toggleDropdown('full-menu')">Carta Completa</button>
+      <div id="full-menu" class="dropdown-content">
+        <p>Disponible en el local con todos los platos, bebidas y sugerencias.</p>
+      </div>
+    </div>
+
+    <div class="recommendations">
+      <h3>Recomendaciones y Sugerencias del Día</h3>
+      <ul>
+        <li>Paella de marisco (solo fines de semana)</li>
+        <li>Tostadas con jamón ibérico y tomate</li>
+        <li>Postre casero del día: Flan de huevo</li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
